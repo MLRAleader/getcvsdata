@@ -1,6 +1,9 @@
 <?php
 
-echo "Bienvenue sur mon application";
+declare(strict_types=1);
+
+
+
 
 
 ?>
