@@ -1,23 +1,20 @@
 <?php
-
 declare(strict_types=1);
 
-require_once './config/config.php';
 
-$fileWay = FILE_PATH.'sample_1.csv';
+//Création de la fonction qui récupère le document.
+function recup_file(string $fileway){
+    $files=[];
 
-/**
- * Fonction qui récupère le fichier dépuis le dossier.
- * Cette fonction prend en paramètre un chemin de fichier.
-*/
-function recupFile(string $fileWay){
+    if(is_dir($fileway) || file_exists($fileway)){
+      scandir($fileway);
+    }
+    $files[]=scandir($fileway);
 
-    if(is_dir($fileWay)){
-        
+    foreach($files as $file){
+        $file=$file[2];
     }
 
+    return $file;
 }
-
-
-
 ?>
